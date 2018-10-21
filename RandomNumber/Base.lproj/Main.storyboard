@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomNumber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgl-PX-cdD">
+                                <rect key="frame" x="93" y="36" width="189.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMD-sF-Zwo">
+                                <rect key="frame" x="127.5" y="625" width="120" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="startNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ulK-Nx-Nyy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klD-d1-PY2">
+                                <rect key="frame" x="118" y="319.5" width="139" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6v-wM-dtq">
+                                <rect key="frame" x="157" y="532" width="61" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pFl-Fh-6ct"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C6v-wM-dtq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6mi-Fs-gkm"/>
+                            <constraint firstItem="FMD-sF-Zwo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8l6-cS-mhO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C6v-wM-dtq" secondAttribute="bottom" constant="87" id="AO4-Xr-fes"/>
+                            <constraint firstItem="Mgl-PX-cdD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Cre-ED-z2I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FMD-sF-Zwo" secondAttribute="bottom" id="Wom-Gp-RrW"/>
+                            <constraint firstItem="Mgl-PX-cdD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="aos-5n-C59"/>
+                            <constraint firstItem="klD-d1-PY2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="l2M-Yk-jTB"/>
+                            <constraint firstItem="klD-d1-PY2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vF4-XM-TIQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="newGameButton" destination="FMD-sF-Zwo" id="kC0-kZ-qn2"/>
+                        <outlet property="nextButton" destination="C6v-wM-dtq" id="sQy-tz-wLs"/>
+                        <outlet property="numberLabel" destination="klD-d1-PY2" id="qFy-QJ-u5u"/>
+                        <outlet property="randomNumberLabel" destination="Mgl-PX-cdD" id="UMt-lG-enl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
