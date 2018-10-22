@@ -39,14 +39,14 @@ class ViewController: UIViewController {
     
     private func updateGame() {
         arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    }
-    
-    @IBAction func startNewGame(_ sender: UIButton) {
-        updateGame()
         numberLabel.text = "Click \"Next\" button"
         newGameButton.isEnabled = false
         nextButton.isHidden = false
         nextButton.isEnabled = true
+    }
+    
+    @IBAction func startNewGame(_ sender: UIButton) {
+        updateGame()
     }
     
     private func configureView() {
