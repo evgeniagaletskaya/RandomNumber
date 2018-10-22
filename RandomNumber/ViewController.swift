@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     
     private(set) var arrayOfNumbers = [Int]()
-    private(set) var removedNumbers = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,6 @@ class ViewController: UIViewController {
         
         if !arrayOfNumbers.isEmpty {
             let randomNumber = arrayOfNumbers.remove(at: arrayOfNumbers.count.arc4random)
-            removedNumbers.append(randomNumber)
             numberLabel.text = "\(randomNumber)"
         } else {
             numberLabel.text = "Out of numbers"
@@ -41,7 +39,6 @@ class ViewController: UIViewController {
     
     private func updateGame() {
         arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        removedNumbers = [Int]()
     }
     
     @IBAction func startNewGame(_ sender: UIButton) {
