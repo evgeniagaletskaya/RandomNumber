@@ -16,32 +16,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var newGameButton: UIButton!
     
-    var arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
+    private(set) var arrayOfNumbers = [Int]()
+    private(set) var removedNumbers = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        updateGame()
     }
 
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         newGameButton.isEnabled = true
-        let randomNumber = arrayOfNumbers.remove(at: arrayOfNumbers.count.arc4random)
-        numberLabel.text = "\(randomNumber)"
-        if arrayOfNumbers.isEmpty {
+        
+        if !arrayOfNumbers.isEmpty {
+            let randomNumber = arrayOfNumbers.remove(at: arrayOfNumbers.count.arc4random)
+            removedNumbers.append(randomNumber)
+            numberLabel.text = "\(randomNumber)"
+        } else {
             numberLabel.text = "Out of numbers"
             nextButton.isHidden = true
         }
     }
     
-    @IBAction func startNewGame(_ sender: UIButton) {
+    private func updateGame() {
         arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        removedNumbers = [Int]()
+    }
+    
+    @IBAction func startNewGame(_ sender: UIButton) {
+        updateGame()
         numberLabel.text = "Click \"Next\" button"
         newGameButton.isEnabled = false
         nextButton.isHidden = false
         nextButton.isEnabled = true
     }
     
-    func configureView() {
+    private func configureView() {
         newGameButton.isEnabled = false
         nextButton.isHidden = false
         nextButton.isEnabled = true
